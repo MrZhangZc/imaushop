@@ -1,0 +1,12 @@
+{
+  "name": "imaushop",
+  "version": "1.0.0",
+  "description": "内农大商层",
+  "main": "app.js",
+  "repository": "git@github.com:MrZhangZc/imaushop.git",
+  "author": "zzc",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.4.1"
+  }
+}
