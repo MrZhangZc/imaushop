@@ -1,0 +1,28 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title}
+    link(href="/css/reset.css", rel="stylesheet")
+    link(href="/css/specific.css", rel="stylesheet")
+  body
+    .top_bar
+      p.top_bar_p 欢迎来到内农大商层 &nbsp;&nbsp;&nbsp;&nbsp;+15754885016
+    .container
+      .goodImage
+        img(src = good.image)
+      .content
+        dl.goodinfo
+          dt 商品名称
+          dd= good.name
+          dt 产地
+          dd= good.form
+          dt 库存
+          dd= good.stock
+          dt 价格
+          dd= good.price
+          dt 简介
+          dd= good.summary
+    a.buy(herf="#") 立即购买
+

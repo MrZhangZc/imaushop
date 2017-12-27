@@ -1,0 +1,27 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50%;
+    margin-top: 5em;
+}
+lable{
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    text-align:right;
+}
+input{
+    margin-left: 3em;
+    width: 19em;
+    height: 2.2em;
+}
+input{
+    line-height: 2.2em;
+    font-size: 0.6em;
+}
+.btn {
+    width: 10em;
+    height: 4em;
+    margin-left: 50%;
+    font-size: 1em;
+    background-color: red;
+}
