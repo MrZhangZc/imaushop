@@ -6,6 +6,7 @@ html
     title #{title}
     link(href="/css/reset.css", rel="stylesheet")
     link(href="/css/list.css", rel="stylesheet")
+    script(src='/js/jquery.min.js')
   body
     h1 #{title}
     .container
@@ -28,3 +29,4 @@ html
             td: a(target="_blank", href='../admin/update/' + item._id) 修改
             td
               button.del(type='button', data-id= item._id) 删除
+    script(src='/js/delete.js')
