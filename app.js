@@ -87,7 +87,8 @@ router.get('/admin/good/new', async ctx => {
 router.get('/admin/update/:id', async ctx => {
     let id = ctx.params.id
     if(id){
-        let good = Good.findById(id)
+        let good = await Good.findById(id)
+        console.log('zzc',good)
 
         await ctx.render('admin', {
             title: '更新页',
@@ -100,14 +101,14 @@ router.get('/admin/update/:id', async ctx => {
 // 存储商品
 
 router.post('/admin/good/new', async ctx => {
-    let id = ctx.params.id
+    let id = ctx.request.body.good._id
     let goodObj = ctx.request.body.good
     let _good
 
     console.log(goodObj)
     //ctx.response.redirect('/')
 
-    if (id !== 'undefined'){
+    if(id !== ''){
         let good = await Good.findById(id)
 
         _good = _.extend(good, goodObj)
