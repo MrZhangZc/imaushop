@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title 内农大商层
+    link(href="/css/sgin.css", rel="stylesheet")
+    style.
+      img{
+      width:100px;
+      height:100px;
+      }
+body
+  .slider
+    h1(style="margin-top:10%;") 注册
+    form(method="post", action="/user/signup" style="margin-top:20%;")
+        .modal-body
+          .form-group
+            label(for="signupName")
+            input#signupName.form-control.input-sing.input-sing-user(name="user[name]", type="text")
+          .form-group
+            label(for="signupPassword")
+            input#signupPassword.form-control.input-sing.input-sing-pas(name="user[password]", type="password")
+        .modal-footer
+          button.btn.btn-success.btn-signin(type="submit") 注册
+  .imgdiv
+    img(src="/images/signin-bg.png" alt="" class="bg zoomIn" id="bg1")

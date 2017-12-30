@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+/*设置背景图片全屏显示，并且居中*/
+
+img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto !important;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.slider {
+    position: absolute;
+    width: 468px;
+    height: 630px;
+    text-align: center;
+    z-index: 9999;
+    right: 15%;
+    top: 20%;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+}
+
+.input-sing {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1.4em;
+    height: 2.7em;
+    border-radius: 4px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: 0;
+    margin: 30px 0;
+    width: 80%;
+    padding-left: 50px;
+}
+
+.input-sing-user {
+    background: url(/images/singin-user-logo.png) no-repeat;
+}
+
+.input-sing-pas {
+    background: url(/images/singin-pas-logo.png) no-repeat;
+}
+
+.btn-signin {
+    background: #33FFFF;
+    width: 249px;
+    height: 90px;
+    font-size: 36px;
+    opacity: 1;
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-signin:hover {
+    background: #365b8a;
+    border: 3px solid #fff;
+}

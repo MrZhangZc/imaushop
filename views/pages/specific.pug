@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  .container2
+    .goodImage
+      img(src = good.image)
+    .content
+      dl.goodinfo
+        dt 商品名称
+        dd= good.name
+        dt 产地
+        dd= good.form
+        dt 库存
+        dd= good.stock
+        dt 价格
+        dd= good.price
+        dt 简介
+        dd= good.summary
+  a.buy(herf="#") 立即购买
+

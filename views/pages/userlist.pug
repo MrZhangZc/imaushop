@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title}
+    link(href="/css/reset.css", rel="stylesheet")
+    link(href="/css/list.css", rel="stylesheet")
+    script(src='/js/jquery.min.js')
+  body
+    h1 #{title}
+    .container
+      table
+        thead
+          tr
+            th 名字
+            th 更新
+            th 删除
+        tbody
+        each item in users
+          tr(class="item-id-" + item._id)
+            td #{item.name}
+            td: a(target="_blank", href='../admin/update/' + item._id) 修改
+            td
+              button.del(type='button', data-id= item._id) 删除
+    script(src='/js/delete.js')

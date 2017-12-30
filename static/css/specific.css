@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 
-.container {
+.container2 {
     display: flex;
     margin: 15em 30%;
 }
@@ -42,4 +42,10 @@
     position: absolute;
     left: 65%;
     top: 70%;
+}
+
+.login {
+    position: absolute;
+    right: 20em;
+    top: 1em;
 }

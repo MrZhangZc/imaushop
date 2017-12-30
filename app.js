@@ -7,7 +7,9 @@ const static     = require('koa-static')
 const koaLogger  = require('koa-logger')
 const convert    = require('koa-convert')
 const bodyParser = require('koa-bodyparser')
+const session = require('koa-session')
 const config     = require('./config/config')
+const flash      = require('connect-flash')
 const app        = new Koa()
 
 mongoose.Promise = global.Promise
@@ -23,6 +25,18 @@ mongoose.connection.on('disconnected', function () {
 })
 
 app.use(bodyParser())
+app.keys = ['imaushop']
+const CONFIG = {
+    key: 'koa:sess',
+    maxAge: 86400000,
+    overwrite: true,
+    httpOnly: true,
+    signed: true,
+    rolling: false
+}
+app.use(session(CONFIG, app))
+
+//app.use(flash())
 
 // 静态文件
 const staticPath = './static'
@@ -31,9 +45,10 @@ app.use(static(
 ))
 
 // 模板文件
-app.use(views(path.join(__dirname, './views'), {
+app.use(views(path.join(__dirname, './views/pages'), {
     extension: 'pug'
 }))
+
 
 // 路由 
 const router = require('./config/router')()

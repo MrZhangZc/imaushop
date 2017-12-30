@@ -3,6 +3,14 @@ let Good = require('../models/good')
 const _ = require('underscore')
 
 exports.home = async ctx => {
+    console.log('user in session')
+    console.log(ctx.session.user)
+
+    let _user = ctx.session.user
+    ctx.state.user = _user
+    
+    console.log('this is ctx.state', ctx.state.user)
+    
     let goods = await Good.fetch()
 
     await ctx.render('index', {
@@ -12,6 +20,10 @@ exports.home = async ctx => {
 }
 
 exports.good = async ctx => {
+
+    let _user = ctx.session.user
+    ctx.state.user = _user
+    
     let id = ctx.params.id
     let good = await Good.findById(id)
 

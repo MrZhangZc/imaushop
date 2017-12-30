@@ -1,0 +1,22 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title 内农大商层
+    link(href="/css/sgin.css", rel="stylesheet")
+body
+  .slider
+    h1(style="margin-top:10%;") 登录
+    form(method="post", action="/user/signin", style="margin-top:20%;")
+      .modal-body
+        .form-group
+          label(for="signinName")
+          input#signinName.form-control.input-sing.input-sing-user(name="user[name]", type="text")
+        .form-group
+          label(for="signinPassword")
+          input#signinPassword.form-control.input-sing.input-sing-pas(name="user[password]", type="password")
+      .modal-footer
+        button.btn.btn-success.btn-signin(type="submit") 登录
+  .imgdiv
+    img(src="/images/signin-bg.png" alt="" class="bg zoomIn" id="bg1")
+    img(src="/images/signup-bg.png" alt="" class="bg zoomOut" id="bg2")

@@ -60,3 +60,9 @@ body{
 .swiper-slide img {
     max-width: 100%;
 }
+
+.login {
+    position: absolute;
+    right : 20em;
+    top : 1em;
+}
