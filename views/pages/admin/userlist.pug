@@ -1,0 +1,14 @@
+extends ../../layout_admin
+
+block content
+  .container
+    table
+      thead
+        tr
+          th 名字
+          th 身份
+      tbody
+      each item in users
+        tr(class="item-id-" + item._id)
+          td #{item.name}
+          td #{item.role}

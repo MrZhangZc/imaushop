@@ -1,0 +1,27 @@
+extends ../../layout_admin
+
+block content
+  .container
+    table
+      thead
+        tr
+          th 食品名称
+          th 价格
+          th 库存
+          th 类别
+          th 查看
+          th 更新
+          th 删除
+      tbody
+      each cat in categories
+        each item in cat.goods
+          tr(class="item-id-" + item._id)
+            td #{item.name}
+            td #{item.price}
+            td #{item.stock}
+            td #{cat.name}
+            td: a(target="_blank", href='../good/' + item._id) 查看
+            td: a(target="_blank", href='../admin/update/' + item._id) 修改
+            td
+              button.del(type='button', data-id= item._id) 删除
+  script(src='/js/delete.js')

@@ -1,5 +1,7 @@
 
 const mongoose = require('mongoose')
+let Schema = mongoose.Schema
+let ObjectId = Schema.Types.ObjectId
 
 let GoodSchema = new mongoose.Schema({
     name: String,
@@ -8,6 +10,10 @@ let GoodSchema = new mongoose.Schema({
     stock: String,
     image: String,
     summary: String,
+    category: {
+        type: ObjectId,
+        ref: 'Category'
+    },
     meta: {
         createAt: {
             type : Date,

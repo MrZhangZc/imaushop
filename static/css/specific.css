@@ -1,47 +1,50 @@
-.top_bar {
-    width: 100%;
-    height: 3.5em;
-    background-color: #2B2B2B;
+body{
+    background-color: #fff
 }
-
-.top_bar p {
-    color: white;
-    line-height: 3.5em;
-    margin-left: 2em;
-    font-weight: bold;
-}
-
 .container2 {
     display: flex;
-    margin: 15em 30%;
+    margin: 15em 35%;
+}
+.container2 .content{
+    margin-left: 10em;
 }
 
-.goodImage {
-    margin-right: 15em;
+.container2 .content p{
+    margin-top: 1em;
 }
 
-.goodinfo dt {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+.container2 .content h2 {
+    margin-top: 1em;
+    color: red;
 }
 
-.goodinfo dd {
-    color : red;
-    font-size: 1.3em;
-    margin-left: 1em;
+.container2 .content h4 {
+    color: #90918D;
+    margin-top: 4em;
+    line-height: 2em;
 }
+
 .buy{
     display: block;
     width: 8em;
     height: 3em;
-    background-color: #9FC;
+    background-color: #FD6905;
     text-align: center;
     line-height: 3em;
-    color: #60F;
+    color: #fff;
     font-weight: bold;
-    position: absolute;
-    left: 65%;
-    top: 70%;
+    margin-top: 1em;
+}
+.reserve{
+    display: block;
+    width: 8em;
+    height: 3em;
+    background-color: #5FA31E;
+    text-align: center;
+    line-height: 3em;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 1em;
 }
 
 .login {
@@ -49,3 +52,4 @@
     right: 20em;
     top: 1em;
 }
+

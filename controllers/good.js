@@ -1,5 +1,6 @@
 
 let Good = require('../models/good')
+let Category = require('../models/catetory')
 const _ = require('underscore')
 
 exports.home = async ctx => {
@@ -8,15 +9,24 @@ exports.home = async ctx => {
 
     let _user = ctx.session.user
     ctx.state.user = _user
-    
-    console.log('this is ctx.state', ctx.state.user)
-    
-    let goods = await Good.fetch()
+
+    console.log(ctx.state.user)
+        
+    let categories = await Category.find({}).populate({ path: 'goods' })
+    console.log(categories)
+
+    //let goods = await Good.fetch()
 
     await ctx.render('index', {
         title : '欢迎来到农大商层',
-        goods : goods
+        categories: categories
     })
+}
+
+exports.daijinquna = async ctx => {
+    let _user = ctx.session.user
+    ctx.state.user = _user
+    await ctx.render('quan')
 }
 
 exports.good = async ctx => {
@@ -26,24 +36,22 @@ exports.good = async ctx => {
     
     let id = ctx.params.id
     let good = await Good.findById(id)
+    let categories = await Category.find({}).populate({ path: 'goods' })
 
     await ctx.render('specific',{
         title : '商品详情',
+        categories: categories,
         good : good
     })
 }
 
 exports.admin = async ctx => {
-    await ctx.render('admin', {
-        tltle : '商品后台录入',
-        good: {
-            name    : '',
-            price   : '',
-            from    : '',
-            stock   : '',
-            image   : '',
-            summary : ''
-        }
+    let categories = await Category.fetch()
+    console.log('11111111111111',categories)
+    await ctx.render('admin/admin', {
+        title: '后台录入',
+        categories: categories,
+        good: {}
     })
 }
 
@@ -52,7 +60,7 @@ exports.update = async ctx => {
     if(id){
         let good = await Good.findById(id)
 
-        await ctx.render('admin', {
+        await ctx.render('admin/admin', {
             title : '后台更新页',
             good : good
         })
@@ -60,11 +68,11 @@ exports.update = async ctx => {
 }
 
 exports.list = async ctx => {
-    let goods = await Good.fetch()
+    let categories = await Category.find({}).populate({ path: 'goods' })
 
-    await ctx.render('list', {
+    await ctx.render('admin/list', {
         title : '商品列表',
-        goods : goods
+        categories : categories
     })
 }
 
@@ -73,7 +81,7 @@ exports.save = async ctx => {
     let goodObj = ctx.request.body.good
     let _good
 
-    if(id !== ''){
+    if(id){
         let good = await Good.findById(id)
 
         _good = _.extend(good, goodObj)
@@ -87,12 +95,21 @@ exports.save = async ctx => {
             from: goodObj.from,
             stock: goodObj.stock,
             image: goodObj.image,
-            summary: goodObj.summary
+            summary: goodObj.summary,
+            category: goodObj.category
         })
 
         _good.save()
 
-        ctx.response.redirect('/')
+        let goodid = _good._id
+        let categoryid = _good.category
+        let category = await Category.findById(categoryid)
+        console.log('11111111', category)
+        category.goods.push(goodid)
+
+        category.save()
+
+        ctx.response.redirect('/good/' + goodid)
     }
 }
 

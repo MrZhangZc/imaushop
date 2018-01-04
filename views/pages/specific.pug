@@ -5,16 +5,17 @@ block content
     .goodImage
       img(src = good.image)
     .content
-      dl.goodinfo
-        dt 商品名称
-        dd= good.name
-        dt 产地
-        dd= good.form
-        dt 库存
-        dd= good.stock
-        dt 价格
-        dd= good.price
-        dt 简介
-        dd= good.summary
-  a.buy(herf="#") 立即购买
+      h1 #{good.name}
+      p 来自于 #{good.from}
+      h2 #{good.price}
+      .btns
+        a.reserve(herf="#") 预订
+        a.buy(herf="#") 立即购买
+      h4 #{good.summary}
+    .cat
+      each cat in categories
+        .div #{cat.name}
+  .footer
+    .footera
+      a(href = "http://blog.lihailezzc.com/posts" target="_blank") @2018 made by zzc
 

@@ -1,0 +1,16 @@
+extends ../../layout_admin
+
+block content
+  .container
+    table
+      thead
+        tr
+          th 分类名称
+          th 删除
+      tbody
+      each item in categories
+        tr(class="item-id-" + item._id)
+          td #{item.name}
+          td
+            button.del(type='button', data-id= item._id) 删除
+    script(src='/js/deletecat.js')

@@ -33,7 +33,7 @@ img.bg {
     height: 630px;
     text-align: center;
     z-index: 9999;
-    right: 15%;
+    left: 15%;
     top: 20%;
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.5);

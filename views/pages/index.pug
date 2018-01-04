@@ -1,11 +1,68 @@
 extends ../layout
 
 block content
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        img(src="/images/1.jpg", alt="")
+      .swiper-slide
+        img(src="/images/2.jpg", alt="")
+      .swiper-slide
+        img(src="/images/3.jpg", alt="")
+      .swiper-slide
+        img(src="/images/4.jpg", alt="")
+    .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+    .swiper-scrollbar
+  .boxs
+    .box
+      .box2
+        .box2p
+          p 商品销售
+        .boxborder
+        .box2p2
+          p 折扣超过75%
+    .box
+      .box2
+        .box2p
+          p 新年钜惠
+        .boxborder
+        .box2p2
+          p 你想不到的低价
+    .box
+      .box2
+        .box2p
+          p 会员返利
+        .boxborder
+        .box2p2
+          p 带来超值收益
+  .shadow
+    img(src="/images/shadow.png", alt="")
   .container
-    each item in goods
-      .goods
-        a(href = "/good/" + item._id)
-          img( src = item.image , alt = item.name )
-        h4 #{item.name}
-        h3 #{item.price}
-        a.btn(href = "/good/" + item._id, role = "button") 立即购买
+    each cat in categories
+      .cates
+        .catesp
+          p #{cat.name}
+        if cat.goods && cat.goods.length > 0
+          each item in cat.goods
+            .goods
+              a(href = "/good/" + item._id)
+                img( src = item.image , alt = item.name )
+              h3.goodname #{item.name}
+              h4 by #{item.from}
+              .buyconnect
+                p #{item.price}
+                a.btn(href = "/good/" + item._id, role = "button") 查看
+  script(src="/js/swiper-3.4.2.min.js")
+  script.
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: 2000,
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        scrollbar: '.swiper-scrollbar',
+    })
+  .footer
+    .footera
+      a(href = "http://blog.lihailezzc.com/posts" target="_blank") @2018 made by zzc

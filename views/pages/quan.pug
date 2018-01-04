@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container3
+    if user.role == 'nomal'
+      .gift
+        h1 您好,  #{user.name}
+        h3 您获得的现金劵金额为 : $100
+        h3 并且获得礼包
+    else if user.role == 'vip'
+      .gift
+        h1 您好, 尊贵的至尊VIP #{user.name}
+        h3 您获得的现金劵金额为 : $5000
+        h3 并且获得豪华礼包
+  .footer
+    .footera
+      a(href = "http://blog.lihailezzc.com/posts" target="_blank") @2018 made by zzc

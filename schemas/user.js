@@ -11,6 +11,10 @@ let UserSchema = new mongoose.Schema({
         unique: true,
         type: String,
     },
+    // nomal
+    // VIP
+    // admin
+    role: String,
     meta: {
         createAt: {
             type: Date,

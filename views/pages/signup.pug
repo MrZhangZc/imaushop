@@ -3,7 +3,7 @@ html
   head
     meta(charset="utf-8")
     title 内农大商层
-    link(href="/css/sgin.css", rel="stylesheet")
+    link(href="/css/sgup.css", rel="stylesheet")
     style.
       img{
       width:100px;
@@ -20,6 +20,10 @@ body
           .form-group
             label(for="signupPassword")
             input#signupPassword.form-control.input-sing.input-sing-pas(name="user[password]", type="password")
+          .form-group
+            select(name="user[role]")
+              option(value="nomal") nomal
+              option(value="vip") vip
         .modal-footer
           button.btn.btn-success.btn-signin(type="submit") 注册
   .imgdiv

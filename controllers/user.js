@@ -12,7 +12,7 @@ exports.signup = async ctx => {
 exports.userList = async ctx => {
     let users = await User.fetch()
 
-    await ctx.render('userlist', {
+    await ctx.render('admin/userlist', {
         title: '会员列表',
         users: users
     })
@@ -20,6 +20,8 @@ exports.userList = async ctx => {
 // 
 exports.signupUser = async ctx => {
     let _user = ctx.request.body.user
+    let zza = ctx.request.body
+    console.log('张智超', zza)
 
     let zzc = await User.findOne({name : _user.name})
     console.log(zzc)
@@ -53,7 +55,8 @@ exports.signinUser = async ctx => {
         if (bool) {
             ctx.session.user = {
                 _id : zzc._id,
-                name : zzc.name
+                name : zzc.name,
+                role : zzc.role
             }
             console.log('zzc: ',ctx.session)
             console.log(zzc)

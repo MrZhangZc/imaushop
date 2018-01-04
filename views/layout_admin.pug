@@ -1,0 +1,35 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title}
+    <link rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen"  />
+    include ./includes/head_admin
+  body
+    .top_bar
+      p.top_bar_p 内农大商层后台管理系统 &nbsp;&nbsp;&nbsp;&nbsp;+15754885016
+    .container-fluid
+      ul
+        li.nav(class={active: pageName === "/admin"})
+          a(href='/admin')
+            i.fa.fa-keyboard-o
+            | &nbsp;商品录入 
+            span.sr-only (current)
+        li.nav(class={active: pageName === "/admin/list"})
+          a(href='/admin/list') 
+            i.fa.fa-file-o
+            | &nbsp;商品列表
+        li.nav(class={active: pageName === "/admin/userlist"})
+          a(href='/admin/userlist') 
+            i.fa.fa-users
+            | &nbsp;会员列表
+        li.nav(class={active: pageName === "/admin/userlist"})
+          a(href='/admin/category/new') 
+            i.fa.fa-users
+            | &nbsp;增加列表
+        li.nav(class={active: pageName === "/admin/userlist"})
+          a(href='/admin/category/list') 
+            i.fa.fa-users
+            | &nbsp;分类列表
+    block content

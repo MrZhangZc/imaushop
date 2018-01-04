@@ -1,0 +1,29 @@
+extends ../../layout_admin
+
+block content
+  .container
+    form.form(method="post", action="/admin/good/new")
+      if good._id
+        input(type="hidden", name="good[_id]", value= good._id)
+      label(for="category") 分类
+      select.form-control.input-lg(name="good[category]",required='true')
+        option(value="") - 选择分类 -
+        each category in categories
+          option(value=category._id) #{category.name}
+      //- each cat in categories
+      //-   lable
+      //-     input(type="radio", name="good[category]" value= cat._id)
+      //-     | #{cat.name}
+      lable(for="inputName") 食品名称
+        input#inputName(type="text", name="good[name]", value= good.name)
+      lable(for="inputPrice") 价格
+        input#inputPrice(type="text", name="good[price]", value= good.price)
+      lable(for="inputFrom") 产地
+        input#inputFrom(type="text", name="good[from]", value= good.from)
+      lable(for="inputStock") 库存
+        input#inputStock(type="text", name="good[stock]", value= good.stock)
+      lable(for="inputImage") 图片地址
+        input#inputImage(type="text", name="good[image]", value= good.image)
+      lable(for="inputSummary") 简介
+        input#inputSummary(type="text", name="good[summary]", value= good.summary)
+      button.btn(type="submit") 录入
