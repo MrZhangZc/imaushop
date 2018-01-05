@@ -17,13 +17,20 @@ html
               a.nvabar-link(href="/logout" style="display:inline;color:white;") 登出
               span &nbsp;|&nbsp;
               a.nvabar-link(href="/daijinquan" style="display:inline;color:red;") 查看我的代金券
-        else
+        else if user.role == 'nomal'
           .login
               span(style="display:inline;color:white;") 欢迎您, #{user.name}
               span(style="display:inline;color:white;") &nbsp;|&nbsp;
               a.nvabar-link(href="/logout" style="display:inline;color:white;") 登出
               span &nbsp;|&nbsp;
               a.nvabar-link(href="/daijinquan" style="display:inline;color:red;") 查看我的代金券
+        else if user.role == 'admin'
+          .login
+              span(style="display:inline;color:white;") 欢迎您管理员, #{user.name}
+              span(style="display:inline;color:white;") &nbsp;|&nbsp;
+              a.nvabar-link(href="/logout" style="display:inline;color:white;") 登出
+              span &nbsp;|&nbsp;
+              a.nvabar-link(href="/admin" style="display:inline;color:red;") 进入后台管理系统
       else
         .login
           a.nvabar-link(href="/signup" style="display:inline;color:white;") 注册

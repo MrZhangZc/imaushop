@@ -26,3 +26,18 @@ body,
     line-height: 2em;
     margin-top: 2em;
 }
+.active {
+    background-color: pink;
+}
+
+.nav {
+    width: 200px;
+    height: 30px;
+}
+
+.nava{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #000;
+    display: inline-block;
+}

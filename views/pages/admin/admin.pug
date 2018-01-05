@@ -5,8 +5,8 @@ block content
     form.form(method="post", action="/admin/good/new")
       if good._id
         input(type="hidden", name="good[_id]", value= good._id)
-      label(for="category") 分类
-      select.form-control.input-lg(name="good[category]",required='true')
+      lable.fla(for="category") 分类
+      select.input-fl(name="good[category]",required='true')
         option(value="") - 选择分类 -
         each category in categories
           option(value=category._id) #{category.name}

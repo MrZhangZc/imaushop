@@ -9,6 +9,11 @@ lable{
     font-size: 2em;
     text-align:right;
 }
+
+.fla{
+    position: absolute;
+    left: 24%;
+}
 input{
     margin-left: 3em;
     width: 19em;
@@ -24,4 +29,13 @@ input{
     margin-left: 50%;
     font-size: 1em;
     background-color: red;
+}
+
+select{
+    height: 3em;
+    width: 19em;
+    line-height: 2.2em;
+    font-size: 1em;
+    margin-left: 19em;
+    margin-bottom: 2em;
 }

@@ -11,25 +11,25 @@ html
       p.top_bar_p 内农大商层后台管理系统 &nbsp;&nbsp;&nbsp;&nbsp;+15754885016
     .container-fluid
       ul
-        li.nav(class={active: pageName === "/admin"})
-          a(href='/admin')
+        li.nav
+          a.nava(href='/admin')
             i.fa.fa-keyboard-o
             | &nbsp;商品录入 
             span.sr-only (current)
-        li.nav(class={active: pageName === "/admin/list"})
-          a(href='/admin/list') 
+        li.nav
+          a.nava(href='/admin/list') 
             i.fa.fa-file-o
             | &nbsp;商品列表
-        li.nav(class={active: pageName === "/admin/userlist"})
-          a(href='/admin/userlist') 
+        li.nav
+          a.nava(href='/admin/userlist') 
             i.fa.fa-users
             | &nbsp;会员列表
-        li.nav(class={active: pageName === "/admin/userlist"})
-          a(href='/admin/category/new') 
-            i.fa.fa-users
-            | &nbsp;增加列表
-        li.nav(class={active: pageName === "/admin/userlist"})
-          a(href='/admin/category/list') 
-            i.fa.fa-users
+        li.nav
+          a.nava(href='/admin/category/new') 
+            i.fa.fa-plus
+            | &nbsp;增加分类
+        li.nav
+          a.nava(href='/admin/category/list') 
+            i.fa.fa-list-ul
             | &nbsp;分类列表
     block content
